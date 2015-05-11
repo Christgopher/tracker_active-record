@@ -1,0 +1,39 @@
+
+<h1>Savage & Le Compte Management Portal</h1>
+<h4>The epitome of excellence since 1990</h4>
+<hr>
+
+<h3>Divisions:</h3>
+
+<ul>
+  <% @divisions.each() do |division| %>
+    <li><a href = "/division/<%= division.id() %>"><%= division.name() %></a></li>
+  <% end %>
+</ul>
+<br>
+
+<form action="/divisions" method="post">
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Add Division</button>
+</form>
+
+<hr>
+
+<h3>Projects:</h3>
+
+<ul>
+  <% @projects.each() do |project| %>
+    <li><a href = "/project/<%= project.id() %>"><%= project.name() %></a></li>
+  <% end %>
+</ul>
+<br>
+
+<form action="/projects" method="post">
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Add Project</button>
+</form>
+<hr>
